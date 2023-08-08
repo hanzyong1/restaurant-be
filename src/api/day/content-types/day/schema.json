@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "days",
+  "info": {
+    "singularName": "day",
+    "pluralName": "days",
+    "displayName": "Day",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "day": {
+      "type": "string"
+    },
+    "restaurants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::restaurant.restaurant",
+      "mappedBy": "closingDays"
+    }
+  }
+}

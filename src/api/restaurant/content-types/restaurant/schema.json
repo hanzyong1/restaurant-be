@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurants",
+  "info": {
+    "singularName": "restaurant",
+    "pluralName": "restaurants",
+    "displayName": "Restaurant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "menu": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "restaurants"
+    },
+    "closingDays": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::day.day",
+      "inversedBy": "restaurants"
+    }
+  }
+}
